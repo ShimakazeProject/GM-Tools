@@ -16,12 +16,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Crape_Studio_Manager
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         public MainWindow()
         {
@@ -32,42 +33,87 @@ namespace Crape_Studio_Manager
         private void MainWindow_Initialized()
         {
             DirectoryInfo di = new DirectoryInfo(@".\Plugin\");
+            DirectoryInfo libDir = new DirectoryInfo(@".\Librarys\");
             var fis = di.GetFiles();
+            List<string> libInfo = new List<string>();
+            foreach (var libn in libDir.GetFiles())
+            {
+                if (libn.Extension.ToLower() != ".dll") continue;
+                Assembly ass = Assembly.LoadFrom(libn.FullName);
+                libInfo.Add(ass.FullName);
+            }
             foreach (var fi in fis)
             {
                 if (fi.Extension.ToLower() == ".dll")
                 {
-                    Assembly ass = Assembly.LoadFrom(fi.FullName);// 获取DLL
-                    string info = ass.FullName;
-                    string[] infos = info.Split(',');
-                    Type type = ass.GetType("Plugin.Main");// 获取DLL命名空间中的类
-                    object obj = Activator.CreateInstance(type);// 实例化这个类
-                    MethodInfo Info = type.GetMethod("Info");// 获取类的方法
-                    string pluginInfo = "";
-                    try
-                    {
-                        pluginInfo = (string)Info.Invoke(obj, new object[] { });
-                    }
-                    catch (NullReferenceException)
-                    {
-                        pluginInfo = "暂无简介";
-                        System.Diagnostics.Debug.WriteLine(fi.FullName + " 未找到Info信息");
-                    }
-
-                    var plugin = new PluginInfo(infos[0].Trim(), infos[1].Split('=')[1].Trim(), type, pluginInfo);
+                    var pluginInfo = PluginInfo.GetPlugIn(fi.FullName);
+                    if (pluginInfo == null) continue;
+                    string name = pluginInfo.Name;
+                    string ver = pluginInfo.Version;
+                    string summary = pluginInfo.Summary;
+                    string inventor = pluginInfo.Inventors;
+                    string copyright = pluginInfo.Copyright;
+                    string[] libs = pluginInfo.Librarys;
+                    List<string> noHaveLib = new List<string>();
                     Button btn = new Button()
                     {
-                        Content = "  " + plugin.Name + "  ",
-                        DataContext = plugin,
-                        ToolTip = plugin.Name + " " + plugin.Ver + "\n" + pluginInfo,
+                        DataContext = pluginInfo,
                         Height = 32,
                         FontSize = 24,
                         Margin = new Thickness(10)
                     };
+                    if (name == null)
+                    {
+                        btn.Content = "  暂无名称  ";
+                    }
+                    else
+                    {
+                        btn.Content = "  " + name + "  ";
+                    }
+                    if (libs != null)
+                    {
+                        foreach (var lib in libs)
+                        {
+                            if (!libInfo.Contains(lib))
+                            {
+                                btn.IsEnabled = false;
+                                noHaveLib.Add(lib);
+                            }
+                        }
+                    }
+                    if (noHaveLib.Count != 0)
+                    {
+                        string lib = string.Empty;
+                        foreach (var item in noHaveLib)
+                        {
+                            lib += item + "\n";
+                        }
+                        btn.ToolTip = $"{name} {ver}\n简介:\n{summary}\n缺少运行库{lib}\n\n{inventor}\n{copyright}";
+                    }
+                    else btn.ToolTip = $"{name} {ver}\n简介:\n{summary}\n\n{inventor}\n{copyright}";
                     btn.Click += Btn_Click;
                     _wp.Children.Add(btn);
                 }
             }
+
+
+            //Assembly ass = Assembly.LoadFrom(fi.FullName);// 获取DLL
+            //string info = ass.FullName;
+            //string[] infos = info.Split(',');
+            //Type type = ass.GetType("Plugin.Main");// 获取DLL命名空间中的类
+            //object obj = Activator.CreateInstance(type);// 实例化这个类
+            //MethodInfo Info = type.GetMethod("Info");// 获取类的方法
+            //string pluginInfo = "";
+            //try
+            //{
+            //    pluginInfo = (string)Info.Invoke(obj, new object[] { });
+            //}
+            //catch (NullReferenceException)
+            //{
+            //    pluginInfo = "暂无简介";
+            //    System.Diagnostics.Debug.WriteLine(fi.FullName + " 未找到Info信息");
+            //}
+
             /*
             di = new DirectoryInfo(@".\PluginC\");
             fis = di.GetFiles();
