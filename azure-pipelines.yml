@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'Windows-2019'
   
 
 variables:
@@ -15,13 +15,22 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreInstaller@0
+- task: UseDotNet@2
+  displayName: 'Install .NET Core SDK'
   inputs:
-    packageType: 'sdk'
-    version: '3.0.100'
-
+    version: 3.0.100
+    performMultiLevelLookup: true
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'Crape Studio Manager/Crape Studio Manager.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
+    feedsToUse: config
+    nugetConfigPath: NuGet.config    # Relative to root of the repository
+    externalFeedCredentials: <Name of the NuGet service connection>
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: 'Crape Studio Manager/Crape Studio Manager.csproj'
+    arguments: '--configuration $(buildConfiguration)'
 
