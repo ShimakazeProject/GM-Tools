@@ -26,5 +26,5 @@ steps:
   inputs:
     command: 'build'
     projects: 'Crape Studio Manager/Crape Studio Manager.csproj'
-    arguments: '-c $(BuildConfiguration)'
+#    arguments: '-c $(BuildConfiguration)'
     feedsToUse: config
