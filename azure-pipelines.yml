@@ -2,13 +2,13 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+#'--configuration $(BuildConfiguration)'
 
 trigger:
 - master
 
 pool:
   vmImage: 'Windows-2019'
-  
 
 variables:
   buildPlatform: 'Any CPU'
@@ -16,15 +16,15 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  displayName: 'Install .NET Core SDK'
+  displayName: '配置 .NET Core SDK'
   inputs:
     version: 3.0.100
     performMultiLevelLookup: true
+
 - task: DotNetCoreCLI@2
   displayName: '构建项目'
   inputs:
     command: 'build'
     projects: 'Crape Studio Manager/Crape Studio Manager.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
+    arguments: '-c $(BuildConfiguration)'
     feedsToUse: config
-
