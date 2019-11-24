@@ -22,12 +22,16 @@ namespace Crape_Studio_Manager
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : System.Windows.Window
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
             MainWindow_Initialized();
+
+
+            Loaded += _window_Loaded;
+            MouseDown += _window_MouseDown;
         }
 
         private void MainWindow_Initialized()
@@ -157,5 +161,81 @@ namespace Crape_Studio_Manager
             MethodInfo Main = plugin.Type.GetMethod("Start");// 获取类的方法
             Main.Invoke(obj, new object[] { });
         }
+
+        private void _close_Click(object sender, RoutedEventArgs e) => Close();
+        private void _minimized_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+        private void _maximized_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Maximized; 
+        private void _title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed) DragMove();
+        }
+        #region 窗口毛玻璃
+        private void _window_Loaded(object sender, RoutedEventArgs e)
+        {
+            EnableBlur();
+        }
+        internal void EnableBlur()
+        {
+            var windowHelper = new System.Windows.Interop.WindowInteropHelper(this);
+
+            var accent = new AccentPolicy();
+            accent.AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND;
+
+            var accentStructSize = Marshal.SizeOf(accent);
+
+            var accentPtr = Marshal.AllocHGlobal(accentStructSize);
+            Marshal.StructureToPtr(accent, accentPtr, false);
+
+            var data = new WindowCompositionAttributeData();
+            data.Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY;
+            data.SizeOfData = accentStructSize;
+            data.Data = accentPtr;
+
+            SetWindowCompositionAttribute(windowHelper.Handle, ref data);
+
+            Marshal.FreeHGlobal(accentPtr);
+        }
+        [DllImport("user32.dll")]
+        internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
+        private void _window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+        #endregion
+
     }
+    #region 结构和类
+    internal enum AccentState
+    {
+        ACCENT_DISABLED = 1,
+        ACCENT_ENABLE_GRADIENT = 0,
+        ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
+        ACCENT_ENABLE_BLURBEHIND = 3,
+        ACCENT_INVALID_STATE = 4
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct AccentPolicy
+    {
+        public AccentState AccentState;
+        public int AccentFlags;
+        public int GradientColor;
+        public int AnimationId;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct WindowCompositionAttributeData
+    {
+        public WindowCompositionAttribute Attribute;
+        public IntPtr Data;
+        public int SizeOfData;
+    }
+
+    internal enum WindowCompositionAttribute
+    {
+        // ...
+        WCA_ACCENT_POLICY = 19
+        // ...
+    }
+    #endregion
 }
