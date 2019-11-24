@@ -14,3 +14,4 @@ steps:
   inputs:
     solution: '**\*.sln'
     vsVersion: '16.0'
+    configuration: 'release'
