@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrapeStudioInterface", "Cra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowDllInfo", "ShowDllInfo\ShowDllInfo.csproj", "{0853A64A-720D-4637-A6A9-8F98DB2530E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrapeStyle", "CrapeStyle\CrapeStyle.csproj", "{DDC98086-1A78-4459-9E74-659B7A47A51D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0853A64A-720D-4637-A6A9-8F98DB2530E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0853A64A-720D-4637-A6A9-8F98DB2530E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0853A64A-720D-4637-A6A9-8F98DB2530E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC98086-1A78-4459-9E74-659B7A47A51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC98086-1A78-4459-9E74-659B7A47A51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC98086-1A78-4459-9E74-659B7A47A51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC98086-1A78-4459-9E74-659B7A47A51D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
