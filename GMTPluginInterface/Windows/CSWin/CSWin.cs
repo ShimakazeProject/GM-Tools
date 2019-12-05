@@ -121,7 +121,7 @@ namespace Plugin.Windows
                             _dp.SetValue(DockPanel.DockProperty, Dock.Right);
                             {
                                 var btn_max = new FrameworkElementFactory(typeof(CSWinbtn.MinMax));
-                                btn_max.SetValue(CSWinbtn.MinMax.PathDataProperty, Geometry.Parse("M0 0 H20 V15 H0 V4 H2 V13 H18 V4 H0 V0"));
+                                btn_max.SetValue(CSWinbtn.MinMax.PathDataProperty, Geometry.Parse("M0 0 H15 V11 H0 V2 H1 V10 H14 V2 H0 V0"));
                                 btn_max.SetBinding(Button.VisibilityProperty, new Binding()
                                 {
                                     Source = this,

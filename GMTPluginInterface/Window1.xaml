@@ -12,13 +12,23 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
+            <RowDefinition Height="64"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Background="Transparent" Height="24" VerticalAlignment="Top">
             <core:CSMenuItem Header="这是一个菜单项"/>
         </Menu>
         <core:CSButton Grid.Row="1" Content="这是一个按钮" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        
+        <Path Grid.Row="0"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Center"
+              Fill="#FF3A3A3A"
+              Stroke="White"
+              StrokeThickness="0"
+              Data="M0 0 H15 V11 H0 V2 H1 V10 H14 V2 H0 V0">
+              <!--"M0 0 H15 V11 H0 V3 H1 V12 H14 V3 H0 V0"-->
+            
+        </Path>
         
     </Grid>
 </core:CSWin>

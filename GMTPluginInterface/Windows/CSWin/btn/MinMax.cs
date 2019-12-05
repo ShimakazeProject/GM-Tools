@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace Plugin.Windows.CSWinbtn
 {
-    public class MinMax: Button
+    public class MinMax : Button
     {
         public Geometry PathData
         {
@@ -25,7 +25,7 @@ namespace Plugin.Windows.CSWinbtn
 
         // Using a DependencyProperty as the backing store for PathData.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PathDataProperty =
-            DependencyProperty.Register("PathData", typeof(Geometry), typeof(MinMax), new PropertyMetadata(Geometry.Parse("M 0,10 H 20 V 15 H 0")));
+            DependencyProperty.Register("PathData", typeof(Geometry), typeof(MinMax), new PropertyMetadata(Geometry.Parse("M 0,10 H 15 V 12 H 0")));
 
 
         public MinMax()
@@ -33,7 +33,7 @@ namespace Plugin.Windows.CSWinbtn
             var ct = new ControlTemplate(typeof(Button));
             {
                 var _border = new FrameworkElementFactory(typeof(Border));
-                _border.SetValue(Border.NameProperty, "Bd");
+                _border.Name = "Bd";
                 _border.SetValue(Border.MarginProperty, new Thickness(1));
                 _border.SetValue(Border.CornerRadiusProperty, new CornerRadius(0));
                 _border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x3A, 0x3A, 0x3A)));
@@ -45,29 +45,33 @@ namespace Plugin.Windows.CSWinbtn
                     Mode = BindingMode.TwoWay,
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
                 });
+                var text = new FrameworkElementFactory(typeof(Path));
+                text.Name = "text";
+                text.SetValue(Path.HorizontalAlignmentProperty, HorizontalAlignment.Center);
+                text.SetValue(Path.VerticalAlignmentProperty, VerticalAlignment.Center);
+                text.SetBinding(Path.DataProperty, new Binding()
                 {
-                    var text = new FrameworkElementFactory(typeof(Path));
-                    text.SetValue(Path.NameProperty, "text");
-                    text.SetValue(Path.FillProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97)));
-                    text.SetValue(Path.HorizontalAlignmentProperty, HorizontalAlignment.Center);
-                    text.SetValue(Path.VerticalAlignmentProperty, VerticalAlignment.Center);
-                    text.SetBinding(Path.DataProperty, new Binding()
-                    {
-                        Source = this,
-                        Path = new PropertyPath("PathData"),
-                        Mode = BindingMode.TwoWay,
-                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                    });
-                    _border.AppendChild(text);
-                }
+                    Source = this,
+                    Path = new PropertyPath("PathData"),
+                    Mode = BindingMode.TwoWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                });
+                text.SetBinding(Path.FillProperty, new Binding()
+                {
+                    Source = this,
+                    Path = new PropertyPath("Foreground"),
+                    Mode = BindingMode.TwoWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                });
+                _border.AppendChild(text);
                 var ctt1 = new Trigger
                 {
                     Property = IsMouseOverProperty,
                     Value = true
                 };
                 {
-                    ctt1.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97))));
-                    ctt1.Setters.Add(new Setter(Path.FillProperty, Brushes.White));
+                    ctt1.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97)), "Bd"));
+                    ctt1.Setters.Add(new Setter(Path.FillProperty, Brushes.White, "text"));
                 }
                 var ctt2 = new Trigger
                 {
@@ -75,8 +79,8 @@ namespace Plugin.Windows.CSWinbtn
                     Value = true
                 };
                 {
-                    ctt2.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97))));
-                    ctt2.Setters.Add(new Setter(Path.FillProperty, Brushes.White));
+                    ctt2.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97)), "Bd"));
+                    ctt2.Setters.Add(new Setter(Path.FillProperty, Brushes.White, "text"));
                 }
 
                 ct.VisualTree = _border;
@@ -96,7 +100,7 @@ namespace Plugin.Windows.CSWinbtn
             var ct = new ControlTemplate(typeof(Button));
             {
                 var _border = new FrameworkElementFactory(typeof(Border));
-                _border.SetValue(Border.NameProperty, "Bd");
+                _border.Name = "Bd";
                 _border.SetValue(Border.MarginProperty, new Thickness(1));
                 _border.SetValue(Border.CornerRadiusProperty, new CornerRadius(0));
                 _border.SetValue(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x3A, 0x3A, 0x3A)));
@@ -110,14 +114,22 @@ namespace Plugin.Windows.CSWinbtn
                 });
                 {
                     var text = new FrameworkElementFactory(typeof(Path));
-                    text.SetValue(Path.NameProperty, "text");
-                    text.SetValue(Path.StrokeProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97)));
+                    text.Name = "text";
                     text.SetValue(Path.HorizontalAlignmentProperty, HorizontalAlignment.Center);
                     text.SetValue(Path.VerticalAlignmentProperty, VerticalAlignment.Center);
+                    text.SetValue(Path.StrokeThicknessProperty, 2d);
                     var gg = new GeometryGroup();
-                    gg.Children.Add(new LineGeometry(new Point(0, 0), new Point(20, 15)));
-                    gg.Children.Add(new LineGeometry(new Point(0, 15), new Point(20, 0)));
+                    //Geometry.Parse("M 0,10 H 20 V 13 H 0")
+                    gg.Children.Add(new LineGeometry(new Point(0, 0), new Point(15, 15)));
+                    gg.Children.Add(new LineGeometry(new Point(0, 15), new Point(15, 0)));
                     text.SetValue(Path.DataProperty, gg);
+                    text.SetBinding(Path.StrokeProperty, new Binding()
+                    {
+                        Source = this,
+                        Path = new PropertyPath("Foreground"),
+                        Mode = BindingMode.TwoWay,
+                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                    });
                     _border.AppendChild(text);
                 }
                 var ctt1 = new Trigger
@@ -126,8 +138,8 @@ namespace Plugin.Windows.CSWinbtn
                     Value = true
                 };
                 {
-                    ctt1.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97))));
-                    ctt1.Setters.Add(new Setter(Path.StrokeProperty, Brushes.White));
+                    ctt1.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0xC9, 0, 0)), "Bd"));
+                    ctt1.Setters.Add(new Setter(Path.StrokeProperty, Brushes.White, "text"));
                 }
                 var ctt2 = new Trigger
                 {
@@ -135,8 +147,8 @@ namespace Plugin.Windows.CSWinbtn
                     Value = true
                 };
                 {
-                    ctt2.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97))));
-                    ctt2.Setters.Add(new Setter(Path.StrokeProperty, Brushes.White));
+                    ctt2.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Color.FromRgb(0x91, 0, 0)), "Bd"));
+                    ctt2.Setters.Add(new Setter(Path.StrokeProperty, Brushes.White, "text"));
                 }
 
                 ct.VisualTree = _border;
@@ -144,9 +156,8 @@ namespace Plugin.Windows.CSWinbtn
                 ct.Triggers.Add(ctt2);
             }
             Template = ct;
-            Background = new SolidColorBrush(Color.FromRgb(0xC9, 0, 0));
-            Foreground = new SolidColorBrush(Color.FromRgb(0x91, 0, 0));
+            Background = new SolidColorBrush(Color.FromRgb(0x3A, 0x3A, 0x3A));
+            Foreground = new SolidColorBrush(Color.FromRgb(0x97, 0x97, 0x97));
         }
     }
-
 }
