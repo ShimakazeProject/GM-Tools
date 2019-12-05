@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CrapeStyle
+namespace Plugin.Demo
 {
     /// <summary>
     /// Window1.xaml 的交互逻辑
     /// </summary>
-    public partial class Window1 : EBWin
+    public partial class Window1 : Windows.CSWin
     {
         public Window1()
         {

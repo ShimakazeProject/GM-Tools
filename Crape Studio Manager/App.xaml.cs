@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,14 +16,22 @@ namespace Crape_Studio_Manager
     /// </summary>
     public partial class App : Application
     {
-        //public App()
-        //{
-        //   // AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-        //}
-        //Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        //{
-        //    AssemblyName assemblyName = new AssemblyName(args.Name);
-        //    return Assembly.LoadFrom(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Librarys"));
-        //}
+        public static CSLogger Logger = new CSLogger("CS Manager");
+
+        public App()
+        {
+            DispatcherUnhandledException += App_DispatcherUnhandledException;
+            Exit += App_Exit;
+        }
+
+        private void App_Exit(object sender, ExitEventArgs e)
+        {
+            Logger.WriteLog(CSLogger.LogRank.INFO, "Application Exit");
+        }
+
+        private void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            Logger.ExceptLog(e.Exception);
+        }
     }
 }

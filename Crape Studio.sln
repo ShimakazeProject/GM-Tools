@@ -5,11 +5,9 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crape Studio Manager", "Crape Studio Manager\Crape Studio Manager.csproj", "{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrapeStudioInterface", "CrapeStudioInterface\CrapeStudioInterface.csproj", "{B8B6B1F4-F2AE-49B0-BDEC-58152ECCD10F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowDllInfo", "ShowDllInfo\ShowDllInfo.csproj", "{0853A64A-720D-4637-A6A9-8F98DB2530E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrapeStyle", "CrapeStyle\CrapeStyle.csproj", "{DDC98086-1A78-4459-9E74-659B7A47A51D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crape Studio Plugin Core", "CrapeStyle\Crape Studio Plugin Core.csproj", "{DDC98086-1A78-4459-9E74-659B7A47A51D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8B6B1F4-F2AE-49B0-BDEC-58152ECCD10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8B6B1F4-F2AE-49B0-BDEC-58152ECCD10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8B6B1F4-F2AE-49B0-BDEC-58152ECCD10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8B6B1F4-F2AE-49B0-BDEC-58152ECCD10F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0853A64A-720D-4637-A6A9-8F98DB2530E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0853A64A-720D-4637-A6A9-8F98DB2530E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0853A64A-720D-4637-A6A9-8F98DB2530E8}.Release|Any CPU.ActiveCfg = Release|Any CPU

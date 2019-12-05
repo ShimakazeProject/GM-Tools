@@ -7,12 +7,12 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("CrapeStyle")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Plugin.Core")]
+[assembly: AssemblyDescription("万物之源..其中包含Crape Studio的UI样式")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CrapeStyle")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("舰队的偶像-岛风酱")]
+[assembly: AssemblyProduct("Plugin.Core")]
+[assembly: AssemblyCopyright("Copyright ©  2019 舰队的偶像-岛风酱, All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
