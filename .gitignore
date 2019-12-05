@@ -24,6 +24,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+# 这里定义的是Wiki目录 Wiki目录不通过这个上传
+.wiki/
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot

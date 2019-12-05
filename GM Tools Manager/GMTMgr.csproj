@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Crape_Studio_Manager</RootNamespace>
-    <AssemblyName>Crape Studio Manager</AssemblyName>
+    <RootNamespace>GMTools</RootNamespace>
+    <AssemblyName>GM Tools</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -101,7 +101,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NativeMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -131,7 +130,7 @@
     <Resource Include="Shimakaze.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrapeStyle\Crape Studio Plugin Core.csproj">
+    <ProjectReference Include="..\GMTPluginInterface\GMTPI.csproj">
       <Project>{ddc98086-1a78-4459-9e74-659b7a47a51d}</Project>
       <Name>Crape Studio Plugin Core</Name>
       <Private>False</Private>

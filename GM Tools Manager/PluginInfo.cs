@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crape_Studio_Manager
+namespace GMTools
 {
     public class PluginInfo
     {

@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace Crape_Studio_Manager
+namespace GMTools
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑

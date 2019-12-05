@@ -7,12 +7,12 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("ShowDllInfo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Plugin.Core")]
+[assembly: AssemblyDescription("万物之源..其中包含GMTools的UI样式")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ShowDllInfo")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("舰队的偶像-岛风酱")]
+[assembly: AssemblyProduct("Plugin.Core")]
+[assembly: AssemblyCopyright("Copyright ©  2019 舰队的偶像-岛风酱, All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,13 +31,13 @@ using System.Windows;
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
 
-[assembly: ThemeInfo(
+[assembly:ThemeInfo(
     ResourceDictionaryLocation.None, //主题特定资源词典所处位置
-                                     //(未在页面中找到资源时使用，
-                                     //或应用程序资源字典中找到时使用)
+                             //(未在页面中找到资源时使用，
+                             //或应用程序资源字典中找到时使用)
     ResourceDictionaryLocation.SourceAssembly //常规资源词典所处位置
-                                              //(未在页面中找到资源时使用，
-                                              //、应用程序或任何主题专用资源字典中找到时使用)
+                                      //(未在页面中找到资源时使用，
+                                      //、应用程序或任何主题专用资源字典中找到时使用)
 )]
 
 

@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Crape_Studio_Manager
+namespace GMTools
 {
     /// <summary>
     /// App.xaml 的交互逻辑
