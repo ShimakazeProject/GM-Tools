@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Plugin.Windows
 {
     /// <summary>
-    /// CSMenuItem.xaml 的交互逻辑
+    /// CSButton.xaml 的交互逻辑
     /// </summary>
-    public partial class CSMenuItem : MenuItem
+    public partial class CSButton : Button
     {
-        public CSMenuItem()
+        public CSButton()
         {
             InitializeComponent();
         }

@@ -115,26 +115,13 @@ namespace Plugin.Windows
                                 Mode = BindingMode.TwoWay,
                                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
                             });
-                            _title.SetBinding(TextBlock.TextProperty, new Binding()
-                            {
-                                Source = this,
-                                Path = new PropertyPath("Title"),
-                                Mode = BindingMode.TwoWay,
-                                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                            });
 
                             var _dp = new FrameworkElementFactory(typeof(DockPanel));
                             _dp.SetValue(DockPanel.HorizontalAlignmentProperty, HorizontalAlignment.Right);
                             _dp.SetValue(DockPanel.DockProperty, Dock.Right);
                             {
-                                var btn_max = new FrameworkElementFactory(typeof(Button));
-                                btn_max.SetBinding(Button.ContentProperty, new Binding()
-                                {
-                                    Source = this,
-                                    Path = new PropertyPath("TitleMaxBtnContant"),
-                                    Mode = BindingMode.TwoWay,
-                                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                                });
+                                var btn_max = new FrameworkElementFactory(typeof(CSWinbtn.MinMax));
+                                btn_max.SetValue(CSWinbtn.MinMax.PathDataProperty, Geometry.Parse("M0 0 H20 V15 H0 V4 H2 V13 H18 V4 H0 V0"));
                                 btn_max.SetBinding(Button.VisibilityProperty, new Binding()
                                 {
                                     Source = this,
@@ -151,14 +138,7 @@ namespace Plugin.Windows
                                 });
                                 btn_max.AddHandler(Button.ClickEvent, handler: new RoutedEventHandler(btn_max_Click));
 
-                                var btn_min = new FrameworkElementFactory(typeof(Button));
-                                btn_min.SetBinding(Button.ContentProperty, new Binding()
-                                {
-                                    Source = this,
-                                    Path = new PropertyPath("TitleMinBtnContant"),
-                                    Mode = BindingMode.TwoWay,
-                                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                                });
+                                var btn_min = new FrameworkElementFactory(typeof(CSWinbtn.MinMax));
                                 btn_min.SetBinding(Button.VisibilityProperty, new Binding()
                                 {
                                     Source = this,
@@ -175,14 +155,7 @@ namespace Plugin.Windows
                                 });
                                 btn_min.AddHandler(Button.ClickEvent, handler: new RoutedEventHandler(btn_min_Click));
 
-                                var btn_close = new FrameworkElementFactory(typeof(Button));
-                                btn_close.SetBinding(Button.ContentProperty, new Binding()
-                                {
-                                    Source = this,
-                                    Path = new PropertyPath("TitleCloseBtnContant"),
-                                    Mode = BindingMode.TwoWay,
-                                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                                });
+                                var btn_close = new FrameworkElementFactory(typeof(CSWinbtn.Close));
                                 btn_close.SetBinding(Button.VisibilityProperty, new Binding()
                                 {
                                     Source = this,

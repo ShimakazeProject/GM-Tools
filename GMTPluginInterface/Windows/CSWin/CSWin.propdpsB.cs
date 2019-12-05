@@ -28,9 +28,6 @@ namespace Plugin.Windows
         public static readonly DependencyProperty TitleMaxBtnVisibilityProperty = DependencyProperty.Register("TitleMaxBtnVisibility", typeof(Visibility), typeof(CSWin), new PropertyMetadata(Visibility.Collapsed));
         public static readonly DependencyProperty TitleMinBtnVisibilityProperty = DependencyProperty.Register("TitleMinBtnVisibility", typeof(Visibility), typeof(CSWin), new PropertyMetadata(Visibility.Visible));
         public static readonly DependencyProperty TitleCloseBtnVisibilityProperty = DependencyProperty.Register("TitleCloseBtnVisibility", typeof(Visibility), typeof(CSWin), new PropertyMetadata(Visibility.Visible));
-        public static readonly DependencyProperty TitleMaxBtnContantProperty = DependencyProperty.Register("TitleMaxBtnContant", typeof(object), typeof(CSWin), new PropertyMetadata("▢"));
-        public static readonly DependencyProperty TitleMinBtnContantProperty = DependencyProperty.Register("TitleMinBtnContant", typeof(object), typeof(CSWin), new PropertyMetadata("_"));
-        public static readonly DependencyProperty TitleCloseBtnContantProperty = DependencyProperty.Register("TitleCloseBtnContant", typeof(object), typeof(CSWin), new PropertyMetadata("×"));
         public static readonly DependencyProperty TitleBtnWidthProperty = DependencyProperty.Register("TitleBtnWidth", typeof(double), typeof(CSWin), new PropertyMetadata(32d));
         public static readonly DependencyProperty WorkareaHeightProperty = DependencyProperty.Register("WorkareaHeight", typeof(GridLength), typeof(CSWin), new PropertyMetadata(new GridLength(1, GridUnitType.Star)));
     }

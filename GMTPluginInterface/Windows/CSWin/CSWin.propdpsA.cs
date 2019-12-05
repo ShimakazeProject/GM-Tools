@@ -111,30 +111,6 @@ namespace Plugin.Windows
             set { SetValue(TitleCloseBtnVisibilityProperty, value); }
         }
         /// <summary>
-        /// 最大化按钮内容
-        /// </summary>
-        public object TitleMaxBtnContant
-        {
-            get { return (object)GetValue(TitleMaxBtnContantProperty); }
-            set { SetValue(TitleMaxBtnContantProperty, value); }
-        }
-        /// <summary>
-        /// 最小化按钮内容
-        /// </summary>
-        public object TitleMinBtnContant
-        {
-            get { return (object)GetValue(TitleMinBtnContantProperty); }
-            set { SetValue(TitleMinBtnContantProperty, value); }
-        }
-        /// <summary>
-        /// 关闭按钮内容
-        /// </summary>
-        public object TitleCloseBtnContant
-        {
-            get { return (object)GetValue(TitleCloseBtnContantProperty); }
-            set { SetValue(TitleCloseBtnContantProperty, value); }
-        }
-        /// <summary>
         /// 按钮宽度
         /// </summary>
         public double TitleBtnWidth

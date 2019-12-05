@@ -56,9 +56,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSLogger.cs" />
+    <Compile Include="Windows\CSButton\CSButton.xaml.cs">
+      <DependentUpon>CSButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CSMenuItem\CSMenuItem.xaml.cs">
       <DependentUpon>CSMenuItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\CSWin\btn\MinMax.cs" />
     <Compile Include="Windows\CSWin\CSWin.cs" />
     <Compile Include="Windows\CSWin\CSWin.propdpsB.cs" />
     <Compile Include="Windows\CSWin\CSWin.propdpsA.cs" />
@@ -99,6 +103,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\CSButton\CSButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\CSMenuItem\CSMenuItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +117,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetFileName) $(OutDir)\..\PlugIn\$(TargetFileName)</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

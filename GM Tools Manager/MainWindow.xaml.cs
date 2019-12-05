@@ -33,6 +33,8 @@ namespace GMTools
 
         private void MainWindow_Initialized()
         {
+            if (!Directory.Exists(@".\Plugin\")) Directory.CreateDirectory(@".\Plugin\");
+            if (!Directory.Exists(@".\Librarys\")) Directory.CreateDirectory(@".\Librarys\");
             DirectoryInfo di = new DirectoryInfo(@".\Plugin\");
             DirectoryInfo libDir = new DirectoryInfo(@".\Librarys\");
             var fis = di.GetFiles();
