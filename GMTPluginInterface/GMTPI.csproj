@@ -57,8 +57,8 @@
   <ItemGroup>
     <Compile Include="CSLogger.cs" />
     <Compile Include="Controls\CSButton\CSButton.cs" />
-    <Compile Include="Controls\CSMenuItem\CSMenuItem.xaml.cs">
-      <DependentUpon>CSMenuItem.xaml</DependentUpon>
+    <Compile Include="Controls\CSMenuItem\CSMenuItemTop.xaml.cs">
+      <DependentUpon>CSMenuItemTop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CSWin\btn\MinMax.cs" />
     <Compile Include="Controls\CSWin\CSWin.cs" />
@@ -101,7 +101,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\CSMenuItem\CSMenuItem.xaml">
+    <Page Include="Controls\CSMenuItem\CSMenuItemTop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

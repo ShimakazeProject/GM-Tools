@@ -18,9 +18,9 @@ namespace Plugin.Controls
     /// <summary>
     /// CSMenuItem.xaml 的交互逻辑
     /// </summary>
-    public partial class CSMenuItem : MenuItem
+    public partial class CSMenuItemTop : MenuItem
     {
-        public CSMenuItem()
+        public CSMenuItemTop()
         {
             InitializeComponent();
         }

@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Background="Transparent" Height="24" VerticalAlignment="Top">
-            <core:CSMenuItem Header="这是一个菜单项"/>
+            <core:CSMenuItemTop Header="这是一个菜单项"/>
         </Menu>
         <core:CSButton Grid.Row="1" Content="这是一个按钮" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Path Grid.Row="0"

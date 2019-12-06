@@ -18,7 +18,7 @@
             </ContextMenu>
         </Grid.ContextMenu>
         <Menu Background="Transparent">
-            <core:CSMenuItem Header="设置"/>
+            <core:CSMenuItemTop Header="设置"/>
         </Menu>
 
         <WrapPanel x:Name="_wp" Grid.Row="1"/>

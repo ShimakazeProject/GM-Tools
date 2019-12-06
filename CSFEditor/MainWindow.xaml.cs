@@ -8,12 +8,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MessageBox = System.Windows.MessageBox;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 
 namespace CSFEditor
 {
@@ -163,15 +163,16 @@ namespace CSFEditor
 
         private void SearchMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if (!_miSearch.IsChecked)
+            var _Search = sender as MenuItem;
+            if (_Search.IsChecked)
             {
                 _rdSearch.Height = new GridLength(64);
-                _miSearch.IsChecked = true;
+                _Search.IsChecked = true;
             }
             else
             {
                 _rdSearch.Height = new GridLength(0);
-                _miSearch.IsChecked = false;
+                _Search.IsChecked = false;
             }
         }
 
