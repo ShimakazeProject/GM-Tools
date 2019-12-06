@@ -1,5 +1,7 @@
-# Crape-Studio-Plugin[![Build Status](https://dev.azure.com/frg2089/Crape%20Studio/_apis/build/status/frg2089.Crape-Studio-Plugin?branchName=master)](https://dev.azure.com/frg2089/Crape%20Studio/_build/latest?definitionId=2&branchName=master)
-Crape Studio的插件  
-[Crape Studio 项目](https://github.com/frg2089/Crape-Studio/)许可证:![项目许可证](https://www.gnu.org/graphics/gplv3-88x31.png)  
-[Crape Studio 插件](https://github.com/frg2089/Crape-Studio-Plugin/)许可证:![插件许可证](https://www.gnu.org/graphics/lgplv3-88x31.png)  
-注意: 插件许可证仅对本项目库中的插件有效  
+# GM Tools [![构建状态](https://dev.azure.com/frg2089/GMan%20Tools/_apis/build/status/frg2089.GM-Tools?branchName=master)](https://dev.azure.com/frg2089/GMan%20Tools/_build/latest?definitionId=3&branchName=master)
+一个为RA2MOD设计的专用的工具集  
+[GM Tools Manager](https://github.com/frg2089/GM-Tools/)  [MPL 许可证](../GMTMgr/LICENSE)  
+## 插件列表
+> [CSF Editor](./)  [MIT 许可证](LICENSE)  
+# Buy a Coffee for Me?
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L219IYY)

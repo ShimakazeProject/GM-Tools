@@ -130,7 +130,7 @@
     <Resource Include="Shimakaze.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GMTPluginInterface\GMTPI.csproj">
+    <ProjectReference Include="..\GMTPI\GMTPI.csproj">
       <Project>{ddc98086-1a78-4459-9e74-659b7a47a51d}</Project>
       <Name>Crape Studio Plugin Core</Name>
       <Private>False</Private>

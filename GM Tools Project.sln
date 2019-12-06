@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMTMgr", "GM Tools Manager\GMTMgr.csproj", "{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMTMgr", "GMTMgr\GMTMgr.csproj", "{321EDCA9-CF90-4A0F-9735-DC8775F5CEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMTPI", "GMTPluginInterface\GMTPI.csproj", "{DDC98086-1A78-4459-9E74-659B7A47A51D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMTPI", "GMTPI\GMTPI.csproj", "{DDC98086-1A78-4459-9E74-659B7A47A51D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSFEditor", "CSFEditor\CSFEditor.csproj", "{DE94B0E6-E750-4A12-A365-BFBC436E7A2E}"
 EndProject
