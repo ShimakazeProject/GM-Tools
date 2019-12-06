@@ -17,7 +17,7 @@ namespace Plugin.Demo
     /// <summary>
     /// Window1.xaml 的交互逻辑
     /// </summary>
-    public partial class Window1 : Windows.CSWin
+    public partial class Window1 : Controls.CSWin
     {
         public Window1()
         {

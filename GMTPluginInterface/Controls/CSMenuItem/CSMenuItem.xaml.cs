@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Plugin.Windows
+namespace Plugin.Controls
 {
     /// <summary>
-    /// CSButton.xaml 的交互逻辑
+    /// CSMenuItem.xaml 的交互逻辑
     /// </summary>
-    public partial class CSButton : Button
+    public partial class CSMenuItem : MenuItem
     {
-        public CSButton()
+        public CSMenuItem()
         {
             InitializeComponent();
         }

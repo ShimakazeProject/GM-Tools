@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Plugin.Windows.CSWinbtn
+namespace Plugin.Controls.CSWinbtn
 {
     public class MinMax : Button
     {

@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace Plugin.Windows
+namespace Plugin.Controls
 {
     public partial class CSWin:Window
     {        
@@ -194,6 +194,19 @@ namespace Plugin.Windows
             WindowStyle = WindowStyle.None;
             AllowsTransparency = true;
             Loaded += _window_Loaded;
+            Deactivated += CSWin_Deactivated;
+            Activated += CSWin_Activated;
+            activatedBrush = CSBorderBrush;
+        }
+        private Brush activatedBrush;
+        private void CSWin_Activated(object sender, EventArgs e)
+        {
+            CSBorderBrush = activatedBrush;
+        }
+
+        private void CSWin_Deactivated(object sender, EventArgs e)
+        {
+            CSBorderBrush = new SolidColorBrush(Color.FromRgb(0x3A, 0x3A, 0x3A));
         }
     }
 }

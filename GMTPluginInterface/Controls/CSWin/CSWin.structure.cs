@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plugin.Windows
+namespace Plugin.Controls
 {
     public partial class CSWin : System.Windows.Window
     {

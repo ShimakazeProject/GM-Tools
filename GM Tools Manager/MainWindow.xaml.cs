@@ -22,7 +22,7 @@ namespace GMTools
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Plugin.Windows.CSWin
+    public partial class MainWindow : Plugin.Controls.CSWin
     {
         public MainWindow()
         {
@@ -58,7 +58,7 @@ namespace GMTools
                     string copyright = pluginInfo.Copyright;
                     string[] libs = pluginInfo.Librarys;
                     List<string> noHaveLib = new List<string>();
-                    Button btn = new Button()
+                    var btn = new Plugin.Controls.CSButton()
                     {
                         DataContext = pluginInfo,
                         Height = 32,

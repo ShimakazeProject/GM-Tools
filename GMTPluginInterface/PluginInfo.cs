@@ -14,26 +14,26 @@ namespace Plugin
         /// <summary>
         /// 插件的名称
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; set; }
         /// <summary>
         /// 插件的简介
         /// </summary>
-        public string Summary { get; private set; }
+        public string Summary { get; set; }
         /// <summary>
         /// 插件版本
         /// </summary>
-        public string Version { get; private set; }
+        public string Version { get; set; }
         /// <summary>
         /// 插件作者信息
         /// </summary>
-        public string Inventors { get; private set; }
+        public string Inventors { get; set; }
         /// <summary>
         /// 插件版权信息
         /// </summary>
-        public string Copyright { get; private set; }
+        public string Copyright { get; set; }
         /// <summary>
         /// 插件所使用的类库
         /// </summary>
-        public string[] Librarys { get; private set; }
+        public string[] Librarys { get; set; }
     }
 }

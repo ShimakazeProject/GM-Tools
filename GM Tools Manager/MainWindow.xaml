@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GMTools"
-        xmlns:core ="clr-namespace:Plugin.Windows;assembly=Plugin.Core"
+        xmlns:core ="url://GM.Tools/ctrls"
         mc:Ignorable="d" Background="#90000000" Foreground="White"
         Title="GMan Tools Manager" Height="450" Width="800">
     <Grid>

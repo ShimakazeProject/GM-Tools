@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace Plugin.Windows
+namespace Plugin.Controls
 {
     public partial class CSWin : System.Windows.Window
     {

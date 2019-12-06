@@ -3,22 +3,19 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Markup;
 
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Plugin.Core")]
-[assembly: AssemblyDescription("万物之源..其中包含GMTools的UI样式")]
+[assembly: AssemblyTitle("CSFEditor")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("舰队的偶像-岛风酱")]
-[assembly: AssemblyProduct("Plugin.Core")]
-[assembly: AssemblyCopyright("Copyright ©  2019 舰队的偶像-岛风酱, All Rights Reserved.")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("CSFEditor")]
+[assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-// 自定义XAML命名空间
-[assembly: XmlnsDefinition("url://GM.Tools/ctrls", "Plugin.Controls")]
-//[assembly: XmlnsDefinition("https://tools.GameModdle.org/ctrls", "Plugin.Controls")] // 不会启用的一个
+
 // 将 ComVisible 设置为 false 会使此程序集中的类型
 //对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型
 //请将此类型的 ComVisible 特性设置为 true。
