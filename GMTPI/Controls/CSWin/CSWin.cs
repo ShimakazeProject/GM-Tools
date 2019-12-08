@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shell;
 
 namespace Plugin.Controls
 {
@@ -190,6 +191,11 @@ namespace Plugin.Controls
                 }
                 ctemp.VisualTree = _border;
             }
+            WindowChrome.SetWindowChrome(this, new WindowChrome()
+            {
+                ResizeBorderThickness = new Thickness(5),
+                CaptionHeight = 0
+            });
             this.Template = ctemp;
             WindowStyle = WindowStyle.None;
             AllowsTransparency = true;

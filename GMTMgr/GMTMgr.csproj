@@ -132,7 +132,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GMTPI\GMTPI.csproj">
       <Project>{ddc98086-1a78-4459-9e74-659b7a47a51d}</Project>
-      <Name>Crape Studio Plugin Core</Name>
+      <Name>GMTPI</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

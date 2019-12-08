@@ -16,12 +16,13 @@ namespace GMTools
     /// </summary>
     public partial class App : Application
     {
-        public static CSLogger Logger = new CSLogger("CS Manager");
+        public static CSLogger Logger = new CSLogger("GM Core");
 
         public App()
         {
             DispatcherUnhandledException += App_DispatcherUnhandledException;
             Exit += App_Exit;
+            Logger.WriteLog(CSLogger.LogRank.INFO, "Application Start");
         }
 
         private void App_Exit(object sender, ExitEventArgs e)
