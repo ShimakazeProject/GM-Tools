@@ -56,33 +56,33 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid x:Name="_dgTagList" Grid.Column="0" SelectionChanged="_dgTagList_SelectionChanged" Background="Transparent">
-                <DataGrid.Columns>
+            <core:CSDataGrid x:Name="_dgTagList" Grid.Column="0" SelectionChanged="_dgTagList_SelectionChanged" Background="Transparent">
+                <core:CSDataGrid.Columns>
                     <DataGridTextColumn Header="标签" Binding="{Binding LTag}" IsReadOnly="True" Width="*"/>
-                </DataGrid.Columns>
-                <DataGrid.ContextMenu>
+                </core:CSDataGrid.Columns>
+                <core:CSDataGrid.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="打开" Click="OpenMenuItem_Click"/>
                         <Separator/>
                         <MenuItem Header="重载列表" Click="F5MenuItem_Click"/>
                         <MenuItem Header="重载文件" Click="F5FileMenuItem_Click"/>
                     </ContextMenu>
-                </DataGrid.ContextMenu>
-            </DataGrid>
-            <DataGrid x:Name="_dgValueList" Grid.Column="1" Background="Transparent">
-                <DataGrid.Columns>
+                </core:CSDataGrid.ContextMenu>
+            </core:CSDataGrid>
+            <core:CSDataGrid x:Name="_dgValueList" Grid.Column="1" Background="Transparent">
+                <core:CSDataGrid.Columns>
                     <DataGridTextColumn Header="标签" Binding="{Binding Key}" IsReadOnly="True" Width="150"/>
                     <DataGridTextColumn Header="值" Binding="{Binding Value[0]}" IsReadOnly="True" Width="*"/>
                     <DataGridTextColumn Header="额外值" Binding="{Binding EValue}" IsReadOnly="True" Width="100"/>
-                </DataGrid.Columns>
-                <DataGrid.ContextMenu>
+                </core:CSDataGrid.Columns>
+                <core:CSDataGrid.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="修改条目" Click="ChangeMI_Click"/>
                         <Separator/>
                         <MenuItem Header="删除条目" Click="DropMI_Click"/>
                     </ContextMenu>
-                </DataGrid.ContextMenu>
-            </DataGrid>
+                </core:CSDataGrid.ContextMenu>
+            </core:CSDataGrid>
         </Grid>
     </Grid>
 </core:CSWin>

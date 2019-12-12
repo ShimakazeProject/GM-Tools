@@ -27,7 +27,7 @@
                                     <Border Background="Transparent"
                                             BorderBrush="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" BorderThickness="1"
                                             SnapsToDevicePixels="True">
-                                        <StackPanel Background="#80000000" IsItemsHost="True" Margin="2" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                                        <StackPanel Background="#80000000" IsItemsHost="True" Margin="2" KeyboardNavigation.DirectionalNavigation="Cycle"/>
                                     </Border>
                                 </ScrollViewer>
                             </Popup>

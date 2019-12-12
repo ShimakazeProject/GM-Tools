@@ -55,6 +55,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CSDataGrid\CSDataGrid.xaml.cs">
+      <DependentUpon>CSDataGrid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CSLogger.cs" />
     <Compile Include="Controls\CSButton\CSButton.cs" />
     <Compile Include="Controls\CSMenuItem\CSMenuItemTop.xaml.cs">
@@ -97,6 +100,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\CSDataGrid\CSDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
